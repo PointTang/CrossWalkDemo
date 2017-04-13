@@ -10,8 +10,11 @@ import android.view.View;
 import com.manong.crosswalkdemo.R;
 import com.manong.crosswalkdemo.BaseActivity;
 
+import org.xwalk.core.XWalkView;
+
 //需要搭配Baseactivity，这里默认为Baseactivity,并且默认BaseActivity为包名的根目录
 public class MainActivity extends BaseActivity {
+    private XWalkView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,8 @@ public class MainActivity extends BaseActivity {
 
     //初始化UI控件
     private void initView() {
-
+        webView = (XWalkView) findViewById(R.id.webView);
+        webView.loadUrl("https://www.baidu.com");
     }
 
     //初始化数据
